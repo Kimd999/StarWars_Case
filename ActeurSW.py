@@ -1,4 +1,5 @@
 #class pour créer les acteurs
+#class pour créer les acteurs
 from xml.dom import NO_MODIFICATION_ALLOWED_ERR
 from PersoSW import *
 
@@ -35,15 +36,15 @@ class Acteur :
     
     #fonction pour parcourir le tuple contenant les personnages
 
-    def parcourirTuple(self, personnage) :
-        for element in personnage :
-                element = str(element)
-                print(element)
+    # def parcourirTuple(self, personnage) :
+    #     for element in personnage :
+    #             element = str(element)
+    #             print(element)
 
     #fonction str 
 
     def __str__(self) : 
-        self.parcourirTuple(personnage)
+        # self.parcourirTuple(personnage)
         return str(self.nom) + " " + str(self.prenom) + " " + str(self.personnage)
 
         
@@ -56,13 +57,10 @@ def nbPersonnages(personnage) :
 
 
 personnage = (P5.__str__(), P6.__str__())
-personnage1 = (P5, P6)
-A1 = Acteur("Christensen", "Hayden", personnage1)
 A2 = Acteur("Neeson", "Liam", P1)
 A3 = Acteur("Christensen", "Hayden", (personnage))
-print(A1.__str__())
+
 print(A2.__str__())
 print(A3.__str__())
-# print(A3.__str__())
 
 
