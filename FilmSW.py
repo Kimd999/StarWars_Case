@@ -72,11 +72,10 @@ class Film :
        return compteur 
 
 
-    #def nbPersonnages(self) :
-     #   return self.nbPersonnages
+ 
 
-    #def calculBenefice(self, recette, cout) :
-     #   return (recette - cout)
+    def calculBenefice(self, recette, cout) :
+       return (recette - cout)
 
     
 
@@ -91,15 +90,17 @@ SW3 = Film("La Revanche des Sith", 2005, 'III', 115000000, 983600000)
 
 collection_films = [SW1,SW2, SW3]
 
+def isBefore(self, annee) : 
+   if annee > self.annee_sortie : 
+       return True
+   else : 
+       return False 
+
 def parcourirCollection(collection) :
 
     for films in collection : 
         print(films.__str__())
 
-#def isBefore(annee) : 
- #   if annee_sortie < annee : 
-  #      return True
-   # else : 
-    #    return False 
+
 
 parcourirCollection(collection_films)
