@@ -1,6 +1,6 @@
 class Personnage : 
 
-    def __init__ (self, nom_perso, prenom_perso) :
+    def __init__ (self, prenom_perso, nom_perso) :
         self.setNomPerso(nom_perso)
         self.setPrenomPerso(prenom_perso)
 
@@ -23,16 +23,19 @@ class Personnage :
     #fonction str 
  
     def __str__(self) : 
-        return str(self.nom_perso) + " " + str(self.prenom_perso)
+        return str(self.prenom_perso) + " " + str(self.nom_perso)
     
 
-P1 = Personnage('Jinn', 'Qui-Gon')
-P2 = Personnage("Palpatine", 'Sheev')
-P3 = Personnage("Tano", "Ashoka")
-P4 = Personnage("Amidala", "Padmé")
-P5 = Personnage("Vader", "Darth")
-P6 = Personnage('Skywalker', "Anakin")
+    #Création de personnages
+
+P1 = Personnage('Qui-Gon', 'Jinn')
+P2 = Personnage("Sheev", 'Palpatine')
+P2b = Personnage("Darth", "Sidious")
+P3 = Personnage("Ashoka", "Tano")
+P4 = Personnage("Padmé", "Amidala")
+P5 = Personnage("Darth", "Vader")
+P6 = Personnage('Anakin', "Skywalker")
 
 
 
-#collection_Personnage = [P1, P2, P3, P4]
+
