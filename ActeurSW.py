@@ -1,5 +1,4 @@
 #class pour créer les acteurs
-#class pour créer les acteurs
 from xml.dom import NO_MODIFICATION_ALLOWED_ERR
 from PersoSW import *
 
@@ -8,7 +7,7 @@ class Acteur :
     def __init__(self, nom, prenom, personnage) :
         self.setNom(nom)
         self.setPrenom(prenom)
-        self.personnage = personnage
+        self.setPersonnage(personnage)        
 
     #setters 
 
@@ -19,9 +18,8 @@ class Acteur :
         self.prenom = prenom 
     
     def setPersonnage(self, personnage) :
-        #self.personnage = (Personnage.__str__())
-        self.personnage = ()
-        self.personnage.append(Personnage.__str__())
+
+        self.personnage = personnage
 
     #getters 
     
@@ -32,35 +30,48 @@ class Acteur :
         return self.prenom
     
     def getPersonnage(self) :
-        return self.personnage
-    
-    #fonction pour parcourir le tuple contenant les personnages
 
-    # def parcourirTuple(self, personnage) :
-    #     for element in personnage :
-    #             element = str(element)
-    #             print(element)
+        return self.personnage
+
+
+#méthode pour ajouter un personnage au tuple vide
+    
+    def parcourirTuple(self):
+
+        personnage = list(self.getPersonnage())
+        stri = ""
+        i = 0
+        while i < len(personnage):
+
+            stri += " interprète " + personnage[i].__str__() + "  et " 
+            i += 1
+        stri = stri[:-4]
+
+          
+        return stri
 
     #fonction str 
 
     def __str__(self) : 
-        # self.parcourirTuple(personnage)
-        return str(self.nom) + " " + str(self.prenom) + " " + str(self.personnage)
+   
+        return str(self.nom) + " " + str(self.prenom) + " " + self.parcourirTuple()
 
         
 
-def nbPersonnages(personnage) :
-    compteur = 0
-    for nb_personnages in personnage :
-        compteur += 1
-    return compteur, nb_personnages 
+    def nbPersonnages(self) :
+        return len(list(self.getPersonnage()))
 
 
-personnage = (P5.__str__(), P6.__str__())
-A2 = Acteur("Neeson", "Liam", P1)
-A3 = Acteur("Christensen", "Hayden", (personnage))
 
-print(A2.__str__())
-print(A3.__str__())
+
+
+
+A1 = Acteur("Christensen", "Hayden", (P5, P6))
+A2 = Acteur('McDiarmid', "Ian", (P2, P2b))
+print(A2.nbPersonnages())
+
+print(A1)
+print(A2)
+
 
 
